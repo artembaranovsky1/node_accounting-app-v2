@@ -20,7 +20,7 @@ const getExpenses = (req, res) => {
 const createExpense = (req, res) => {
   const { userId, spentAt, title, amount, category, note } = req.body;
 
-  if (!(userId, spentAt, title, amount, category, note)) {
+  if (!userId || !spentAt || !title || !amount || !category || !note) {
     return res.status(400).send('Bad Request');
   }
 
